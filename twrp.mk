@@ -17,6 +17,8 @@
 PRODUCT_COPY_FILES += \
     device/lge/hammerheadcaf/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 
+BOARD_KERNEL_CMDLINE := $(BOARD_KERNEL_CMDLINE) androidboot.selinux=permissive
+
 BOARD_HAS_NO_REAL_SDCARD := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
@@ -28,3 +30,5 @@ TW_INCLUDE_CRYPTO := true
 TW_MAX_BRIGHTNESS := 255
 TW_NO_USB_STORAGE := true
 TW_THEME := portrait_hdpi
+TW_USE_TOOLBOX := true
+TW_EXCLUDE_SUPERSU := true
