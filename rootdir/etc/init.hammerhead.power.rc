@@ -128,7 +128,7 @@ on boot
     trigger enable-low-power
 
 on property:dev.bootcomplete=1
-    setprop sys.io.scheduler "cfq"
+    setprop sys.io.scheduler "bfq"
     write /sys/block/mmcblk0/bdi/read_ahead_kb 512
     rm /data/system/perfd/default_values
     start mpdecision
