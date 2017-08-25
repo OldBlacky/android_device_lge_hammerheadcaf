@@ -25,6 +25,7 @@ dalvik.vm.dex2oat-swap=false
 dalvik.vm.heapminfree=2m
 
 # Display
+debug.hwui.use_buffer_age=false
 persist.hwc.mdpcomp.enable=true
 persist.mdpcomp_perfhint=50
 

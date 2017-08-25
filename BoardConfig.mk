@@ -36,7 +36,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
 # Build
-TARGET_USE_SDCLANG := true
+#TARGET_USE_SDCLANG := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
@@ -46,6 +46,9 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 TARGET_KERNEL_CONFIG := lineageos_hammerhead_defconfig
+
+# TEMP
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # QCOM Hardware
 BOARD_USES_QCOM_HARDWARE := true
