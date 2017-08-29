@@ -125,6 +125,9 @@ on boot
     write /sys/module/process_reclaim/parameters/per_swap_size 512
     write /sys/module/process_reclaim/parameters/swap_opt_eff 30
 
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
+
 on post-fs-data
     write /sys/kernel/boot_adsp/boot 1
 
@@ -225,7 +228,7 @@ service irsc_util /system/bin/irsc_util "/etc/sec_config"
     user root
     oneshot
 
-service wpa_supplicant /system/bin/wpa_supplicant \
+service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf -N \
     -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
