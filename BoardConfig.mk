@@ -50,6 +50,9 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 # QCOM Hardware
 BOARD_USES_QCOM_HARDWARE := true
 
+# Vendor Interface Manifest
+DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
