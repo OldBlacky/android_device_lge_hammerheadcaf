@@ -46,16 +46,16 @@ on boot
     write /sys/module/wakelock/parameters/debug_mask 7
 
     # bluetooth
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
+    chown bluetooth bluethoot /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluethoot /sys/class/rfkill/rfkill0/state
     chmod 0660 /sys/class/rfkill/rfkill0/state
 
     # bluetooth LPM
-    chown bluetooth net_bt_stack /proc/bluetooth/sleep/lpm
-    chown bluetooth net_bt_stack /proc/bluetooth/sleep/btwrite
+    chown bluetooth bluethoot /proc/bluetooth/sleep/lpm
+    chown bluetooth bluethoot /proc/bluetooth/sleep/btwrite
 
     # bluetooth UART dev
-    chown bluetooth net_bt_stack /sys/devices/f9960000.uart/clock
+    chown bluetooth bluethoot /sys/devices/f9960000.uart/clock
     chmod 0660 /sys/devices/f9960000.uart/clock
 
     #Create QMUX deamon socket area
