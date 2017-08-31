@@ -25,6 +25,9 @@
 #include <string.h>
 #include <unistd.h>
 
+#include <string>
+#include <vector>
+
 #include "edify/expr.h"
 #include "updater/install.h"
 
@@ -151,10 +154,10 @@ err_ret:
 }
 
 /* verify_baseband("BASEBAND_VERSION", "BASEBAND_VERSION", ...) */
-Value * VerifyBasebandFn(const char *name, State *state, int argc, Expr *argv[]) {
+Value *VerifyBasebandFn(const char *name, State *state, const std::vector<std::unique_ptr<Expr>> &argv) {
     char current_baseband_version[BASEBAND_VER_BUF_LEN];
-    char *baseband_version;
-    int i, ret;
+    std::vector<std::string> args;
+    int ret;
 
     ret = get_baseband_version(current_baseband_version, BASEBAND_VER_BUF_LEN);
     if (ret) {
@@ -162,21 +165,22 @@ Value * VerifyBasebandFn(const char *name, State *state, int argc, Expr *argv[])
                 name, ret);
     }
 
-    for (i = 1; i <= argc; i++) {
-        ret = ReadArgs(state, argv, i, &baseband_version);
-        if (ret < 0) {
-            return ErrorAbort(state, kArgsParsingFailure, "%s() error parsing arguments: %d",
-                name, ret);
-        }
+    if (!ReadArgs(state, argv, &args)) {
+        return ErrorAbort(state, kArgsParsingFailure, "%s() error parsing arguments: %d", name);
+    }
 
+    ret = 0;
+    for (auto& baseband_version : args) {
         uiPrintf(state, "Comparing BASEBAND version %s to %s",
-                baseband_version, current_baseband_version);
-        if (strncmp(baseband_version, current_baseband_version, strlen(baseband_version)) == 0) {
-            return StringValue(strdup("1"));
+                baseband_version.c_str(), current_baseband_version);
+
+        if (strncmp(baseband_version.c_str(), current_baseband_version, baseband_version.length()) == 0) {
+            ret = 1;
+            break;
         }
     }
 
-    return StringValue(strdup("0"));
+    return StringValue(strdup(ret ? "1":"0"));
 }
 
 void Register_librecovery_updater_hammerhead() {
