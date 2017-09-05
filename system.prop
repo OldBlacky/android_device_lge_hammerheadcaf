@@ -90,8 +90,5 @@ persist.debug.sensors.hal=w
 debug.qualcomm.sns.daemon=w
 debug.qualcomm.sns.libsensor1=w
 
-# Storage
-ro.sys.sdcardfs=true
-
 # Wifi
 wifi.interface=wlan0
