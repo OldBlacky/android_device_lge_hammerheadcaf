@@ -29,7 +29,8 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := hammerheadcaf
 PRODUCT_NAME := lineage_hammerheadcaf
-PRODUCT_BRAND := google
+#PRODUCT_BRAND := google
+PRODUCT_BRAND := g
 PRODUCT_MODEL := Nexus 5 CAF
 PRODUCT_MANUFACTURER := LGE
 
