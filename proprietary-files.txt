@@ -152,7 +152,6 @@ vendor/lib/libCB.so|bbb4831624a6bbb463d30edbe4ba736ccd377195
 vendor/lib/libCommandSvc.so
 vendor/lib/libconfigdb.so
 vendor/lib/libdiag.so
-vendor/lib/libDivxDrm.so|d4fdd8d74d8c54cc34b3bd0d78e86809959cd162
 vendor/lib/libdrmdecrypt.so
 vendor/lib/libdrmdiag.so|e1c75d26475647a01c227ac18b627959345444d8
 vendor/lib/libdrmfs.so|3f4dde0be54d391a2bb8f5c0ea36e4db02f36c7a
@@ -163,7 +162,6 @@ vendor/lib/libDxHdcp.so
 vendor/lib/libFuzzmmstillomxenc.so
 vendor/lib/libgeofence.so
 vendor/lib/libgsl.so|a7615de4e0a4d53b757a38c4b2d0f234646f18e5
-vendor/lib/libI420colorconvert.so|57505dc08cb29ced42058567dd39b26e42c83b49
 vendor/lib/libidl.so
 vendor/lib/libizat_core.so
 vendor/lib/libjpegdhw.so
@@ -187,7 +185,6 @@ vendor/lib/libmmcamera2_wnr_module.so
 vendor/lib/libmmcamera_faceproc.so
 vendor/lib/libmmcamera_imglib.so
 vendor/lib/libmmcamera_imx179_eeprom.so
-vendor/lib/libmm-color-convertor.so|519fa0410134ff4385d1c23de322934e3fcc21af
 vendor/lib/libmmipl.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
@@ -218,7 +215,6 @@ vendor/lib/libscale.so|8a54d480a1902013e12d89e18be9ff70a599dd51
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsensor_user_cal.so
-vendor/lib/libSHIMDivxDrm.so|cff8ad2f832f390d901d9997f930d84cbcd9c3f4
 vendor/lib/libssd.so|7547d25b4f3ab752dbb458dda2bcbd2f92a64419
 vendor/lib/libthermalclient.so|82f45915c49f64ac5c2349d3defc7c5a71e25900
 vendor/lib/libthermalioctl.so|2310cdee6cf268a27584dc6c1127c591b1e11755
