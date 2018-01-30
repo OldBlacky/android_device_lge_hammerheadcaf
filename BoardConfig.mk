@@ -35,8 +35,16 @@ TARGET_BOOTLOADER_BOARD_NAME := hammerhead
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
-# Build
+# SD CLANG
 TARGET_USE_SDCLANG := true
+
+ifneq ($(HOST_OS),darwin)
+  ifeq ($(SDCLANG),true)
+    SDCLANG_PATH := prebuilts/clang/linux-x86/host/sdclang-3.8/bin
+    SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
+    SDLLVM_AE_FLAG += -Ofast -mcpu=krait2
+  endif
+endif
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
